@@ -3,6 +3,10 @@ using GalaSoft.MvvmLight.CommandWpf;
 using DocCrypter.Model;
 using System.Windows.Input;
 using Microsoft.Win32;
+using System.Windows;
+using System.IO;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace DocCrypter.ViewModel
 {
@@ -59,19 +63,33 @@ namespace DocCrypter.ViewModel
         /// <summary>
         /// ファイルを開くボタンクリック時に発生させるコマンド
         /// </summary>
-        private ICommand _fileOpenCommand;
+        private ICommand _fileOpen;
         
-        public ICommand FileOpenCommand
+        public ICommand FileOpen
         {
             get
             {
-                return _fileOpenCommand ?? (_fileOpenCommand = new RelayCommand(FileOpenExecute));
+                return _fileOpen ?? (_fileOpen = new RelayCommand(FileOpenExecute));
             }
         }
 
         private async void FileOpenExecute()
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".docx";
+            dlg.Filter = "Word文書ファイル|*.docx";
+            StreamReader file;
+            if (dlg.ShowDialog() == false) { return; }
+
+            var window = Application.Current.MainWindow as MetroWindow;
+            try
+            {
+                file = new StreamReader(dlg.FileName);
+            }
+            catch (IOException)
+            {
+                await window.ShowMessageAsync("エラー", "ファイルを開けません");
+            }
         }
     }
 }
