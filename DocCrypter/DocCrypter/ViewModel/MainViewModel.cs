@@ -213,7 +213,7 @@ namespace DocCrypter.ViewModel
                 stream = dlg.OpenFile();
                 if(stream != null)
                 {
-                    var tmp = new byte[2]{ 0xFF, 0xD9 };
+                    var tmp = new byte[5]{ 0xFF, 0xD9, 0x50, 0x4B, 0x03 };
                     var startIndex = UsefulMethod.byteSearchFromEnd(imageFile, tmp) + 2;
                     Console.WriteLine(startIndex);
                     restoreFile = new byte[imageFile.Length - startIndex];

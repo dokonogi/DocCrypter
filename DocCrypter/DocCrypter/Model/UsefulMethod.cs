@@ -20,8 +20,8 @@ namespace DocCrypter.Model
             int i = 0, p = 0;
             int ret = -2;
 
-            while (i < target.Length)
-            {
+            // while (i < target.Length)
+            // {
                 while (i < target.Length && p < pattern.Length)
                 {
                     if (target[i] == pattern[p])
@@ -39,10 +39,9 @@ namespace DocCrypter.Model
                     if (p == pattern.Length)
                     {
                         ret = i - p;
-                        p = 0;
                     }
                 }
-            }
+            // }
             return ret;
         }
 

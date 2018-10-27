@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocCrypter", "DocCrypter\DocCrypter.csproj", "{A732B426-7303-43BA-B7D4-858AF88264B5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{A61671A3-473F-4E48-9DAB-E17E02707CA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{A732B426-7303-43BA-B7D4-858AF88264B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A732B426-7303-43BA-B7D4-858AF88264B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A732B426-7303-43BA-B7D4-858AF88264B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61671A3-473F-4E48-9DAB-E17E02707CA3}.Debug|Any CPU.ActiveCfg = Debug
+		{A61671A3-473F-4E48-9DAB-E17E02707CA3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
