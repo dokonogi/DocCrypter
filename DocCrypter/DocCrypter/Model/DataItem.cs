@@ -8,9 +8,15 @@
             private set;
         }
 
-        public DataItem(string title)
+        public string DocFilePath
         {
-            Title = title;
+            get;
+            set;
         }
+
+        public DataItem()
+        {
+        }
+
     }
 }
